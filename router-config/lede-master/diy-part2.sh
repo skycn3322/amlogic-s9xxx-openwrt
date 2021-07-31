@@ -67,6 +67,14 @@ git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
 git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git
 rm -rf ../lean/luci-theme-argon
 
+# Add ServerChan
+git clone --depth=1 https://github.com/tty228/luci-app-serverchan
+
+# netdata汉化版
+pushd package/lean
+git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata
+rm -rf ./openwrt-packages/luci-app-netdata
+
 # firewall custom
 echo "iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/config/firewall/files/firewall.user
 # 关闭DHCP
