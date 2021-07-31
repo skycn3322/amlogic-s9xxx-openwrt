@@ -32,7 +32,7 @@ sed -i 's/192.168.1.1/192.168.2.2/g' package/base-files/files/bin/config_generat
 #
 
 echo '修改机器名称'
-sed -i 's/OpenWrt/jellyfin/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 # 版本号里显示一个自己的名字
 sed -i 's/OpenWrt /jellyfin build $(TZ=UTC-8 date "%Y-%m-%d") @ OpenWrt /g' openwrt/package/lean/default-settings/files/zzz-default-settings
 sed -i "s/OpenWrt /jellyfin build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
@@ -62,23 +62,12 @@ rm -rf package/openwrt-ssrplus/luci-app-ssr-plus/po/zh_Hans 2>/dev/null
 # Add to compile options (Add related dependencies according to the requirements of the third-party software package Makefile)
 # sed -i "/DEFAULT_PACKAGES/ s/$/ pirania-app pirania ip6tables-mod-nat ipset shared-state-pirania uhttpd-mod-lua/" target/linux/armvirt/Makefile
 
-# Add luci-theme-argon
-git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon
-git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git
-rm -rf ../lean/luci-theme-argon
 
-# Add ServerChan
-git clone --depth=1 https://github.com/tty228/luci-app-serverchan
-
-# netdata汉化版
-# pushd package/lean
-# git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata
-rm -rf ./package/lean/wol
 
 # firewall custom
 echo "iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/config/firewall/files/firewall.user
 # 关闭DHCP
-# echo "close_dhcp" > package/base-files/files/etc/closedhcp
+echo "close_dhcp" > package/base-files/files/etc/closedhcp
 
 # 设置主题argon
 sed -i "/commit luci/i\uci set luci.main.mediaurlbase='/luci-static/argon'" package/lean/default-settings/files/zzz-default-settings
