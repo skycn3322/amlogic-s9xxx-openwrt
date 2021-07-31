@@ -16,3 +16,6 @@
 # other
 # rm -rf package/lean/{samba4,luci-app-samba4,luci-app-ttyd}
 
+# 删除默认插件
+rm -rf ./feeds/luci/applications/luci-app-upnp
+rm -rf ./feeds/luci/applications/luci-app-wol
