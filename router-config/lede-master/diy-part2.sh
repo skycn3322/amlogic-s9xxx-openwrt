@@ -71,28 +71,28 @@ rm -rf ../lean/luci-theme-argon
 git clone --depth=1 https://github.com/tty228/luci-app-serverchan
 
 # netdata汉化版
-pushd package/lean
-git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata
-rm -rf ./openwrt-packages/luci-app-netdata
+# pushd package/lean
+# git clone --depth=1 https://github.com/sirpdboy/luci-app-netdata
+# rm -rf ./openwrt-packages/luci-app-netdata
 
 # firewall custom
 echo "iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/config/firewall/files/firewall.user
 # 关闭DHCP
-echo "close_dhcp" > package/base-files/files/etc/closedhcp
+# echo "close_dhcp" > package/base-files/files/etc/closedhcp
 
 # 设置主题argon
 sed -i "/commit luci/i\uci set luci.main.mediaurlbase='/luci-static/argon'" package/lean/default-settings/files/zzz-default-settings
 
 # 修改插件名字
 sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-turboacc/po/zh-cn/turboacc.po
-#sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
+# sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
 sed -i 's/"Argon 主题设置"/"Argon 设置"/g' package/lean/luci-app-argon-config/po/zh-cn/argon-config.po
-sed -i 's/"解锁网易云灰色歌曲"/"网易云解锁"/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
-sed -i 's/"京东签到服务"/"京东签到"/g' package/lean/luci-app-jd-dailybonus/po/zh-cn/jd-dailybonus.po
+# sed -i 's/"解锁网易云灰色歌曲"/"网易云解锁"/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
+# sed -i 's/"京东签到服务"/"京东签到"/g' package/lean/luci-app-jd-dailybonus/po/zh-cn/jd-dailybonus.po
 sed -i 's/"上网时间控制"/"上网控制"/g' package/lean/luci-app-accesscontrol/po/zh-cn/mia.po
 sed -i 's/"BaiduPCS Web"/"百度网盘"/g' package/lean/luci-app-baidupcs-web/luasrc/controller/baidupcs-web.lua
-sed -i 's/cbi("qbittorrent"),_("qBittorrent")/cbi("qbittorrent"),_("BT下载")/g' package/lean/luci-app-qbittorrent/luasrc/controller/qbittorrent.lua
-sed -i 's/"aMule设置"/"电驴下载"/g' package/lean/luci-app-amule/po/zh-cn/amule.po
+# sed -i 's/cbi("qbittorrent"),_("qBittorrent")/cbi("qbittorrent"),_("BT下载")/g' package/lean/luci-app-qbittorrent/luasrc/controller/qbittorrent.lua
+# sed -i 's/"aMule设置"/"电驴下载"/g' package/lean/luci-app-amule/po/zh-cn/amule.po
 sed -i 's/"网络存储"/"存储"/g' package/lean/luci-app-amule/po/zh-cn/amule.po
 sed -i 's/"网络存储"/"存储"/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
 sed -i 's/"实时流量监测"/"流量"/g' package/lean/luci-app-wrtbwmon/po/zh-cn/wrtbwmon.po
@@ -100,13 +100,13 @@ sed -i 's/"KMS 服务器"/"KMS激活"/g' package/lean/luci-app-vlmcsd/po/zh-cn/v
 sed -i 's/"TTYD 终端"/"shell终端"/g' package/lean/luci-app-ttyd/po/zh-cn/terminal.po
 sed -i 's/"USB 打印服务器"/"打印服务"/g' package/lean/luci-app-usb-printer/po/zh-cn/usb-printer.po
 sed -i 's/"网络存储"/"存储"/g' package/lean/luci-app-usb-printer/po/zh-cn/usb-printer.po
-sed -i 's/"挂载 SMB 网络共享"/"SMB共享"/g' package/lean/luci-app-cifs-mount/po/zh-cn/cifs.po
+# sed -i 's/"挂载 SMB 网络共享"/"SMB共享"/g' package/lean/luci-app-cifs-mount/po/zh-cn/cifs.po
 sed -i 's/"Frp 内网穿透"/"内网穿透"/g' package/lean/luci-app-frpc/po/zh-cn/frp.po
-#sed -i 's/"Web 管理"/"Web"/g' package/lean/luci-app-webadmin/po/zh-cn/webadmin.po
-#sed -i 's/"管理权"/"改密码"/g' feeds/luci/modules/luci-base/po/zh-cn/base.po
+# sed -i 's/"Web 管理"/"Web"/g' package/lean/luci-app-webadmin/po/zh-cn/webadmin.po
+# sed -i 's/"管理权"/"改密码"/g' feeds/luci/modules/luci-base/po/zh-cn/base.po
 sed -i 's/"带宽监控"/"监视"/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
-sed -i 's/"EQoS"/"限速设置"/g' package/lean/luci-app-eqos/po/zh-cn/eqos.lua
-sed -i 's/"MWAN3 分流助手"/"分流助手"/g' package/lean/luci-app-mwan3helper/po/zh-cn/mwan3helper.po
+# sed -i 's/"EQoS"/"限速设置"/g' package/lean/luci-app-eqos/po/zh-cn/eqos.lua
+# sed -i 's/"MWAN3 分流助手"/"分流助手"/g' package/lean/luci-app-mwan3helper/po/zh-cn/mwan3helper.po
 
 # Apply patch
 # git apply ../router-config/patches/{0001*,0002*}.patch --directory=feeds/luci
