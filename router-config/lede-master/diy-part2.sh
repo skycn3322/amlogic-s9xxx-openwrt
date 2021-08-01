@@ -94,7 +94,9 @@ sed -i 's/"网络存储"/"存储"/g' package/lean/luci-app-usb-printer/po/zh-cn/
 sed -i 's/"Frp 内网穿透"/"内网穿透"/g' package/lean/luci-app-frpc/po/zh-cn/frp.po
 # sed -i 's/"Web 管理"/"Web"/g' package/lean/luci-app-webadmin/po/zh-cn/webadmin.po
 # sed -i 's/"管理权"/"改密码"/g' feeds/luci/modules/luci-base/po/zh-cn/base.po
+sed -i 's/"FTP 服务器"/"FTP 服务"/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
 sed -i 's/"带宽监控"/"监视"/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
+sed -i 's/"ShadowSocksR Plus+"/"SSR Plus+"/g' package/lean/luci-app-ssr-plus/po/zh-cn/shadowsocksr.po
 # sed -i 's/"EQoS"/"限速设置"/g' package/lean/luci-app-eqos/po/zh-cn/eqos.lua
 # sed -i 's/"MWAN3 分流助手"/"分流助手"/g' package/lean/luci-app-mwan3helper/po/zh-cn/mwan3helper.po
 
