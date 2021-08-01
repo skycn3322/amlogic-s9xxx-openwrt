@@ -76,11 +76,11 @@ sed -i "/commit luci/i\uci set luci.main.mediaurlbase='/luci-static/argon'" pack
 # 修改插件名字
 sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-turboacc/po/zh-cn/turboacc.po
 # sed -i 's/"Turbo ACC 网络加速"/"网络加速"/g' package/lean/luci-app-sfe/po/zh-cn/sfe.po
-sed -i 's/"Argon 主题设置"/"Argon 设置"/g' package/lean/luci-app-argon-config/po/zh-cn/argon-config.po
+# sed -i 's/"Argon 主题设置"/"Argon 设置"/g' package/lean/luci-app-argon-config/po/zh-cn/argon-config.po
 # sed -i 's/"解锁网易云灰色歌曲"/"网易云解锁"/g' package/lean/luci-app-unblockmusic/po/zh-cn/unblockmusic.po
 # sed -i 's/"京东签到服务"/"京东签到"/g' package/lean/luci-app-jd-dailybonus/po/zh-cn/jd-dailybonus.po
 sed -i 's/"上网时间控制"/"上网控制"/g' package/lean/luci-app-accesscontrol/po/zh-cn/mia.po
-sed -i 's/"BaiduPCS Web"/"百度网盘"/g' package/lean/luci-app-baidupcs-web/luasrc/controller/baidupcs-web.lua
+# sed -i 's/"BaiduPCS Web"/"百度网盘"/g' package/lean/luci-app-baidupcs-web/luasrc/controller/baidupcs-web.lua
 # sed -i 's/cbi("qbittorrent"),_("qBittorrent")/cbi("qbittorrent"),_("BT下载")/g' package/lean/luci-app-qbittorrent/luasrc/controller/qbittorrent.lua
 # sed -i 's/"aMule设置"/"电驴下载"/g' package/lean/luci-app-amule/po/zh-cn/amule.po
 sed -i 's/"网络存储"/"存储"/g' package/lean/luci-app-amule/po/zh-cn/amule.po
@@ -96,7 +96,7 @@ sed -i 's/"Frp 内网穿透"/"内网穿透"/g' package/lean/luci-app-frpc/po/zh-
 # sed -i 's/"管理权"/"改密码"/g' feeds/luci/modules/luci-base/po/zh-cn/base.po
 sed -i 's/"FTP 服务器"/"FTP 服务"/g' package/lean/luci-app-vsftpd/po/zh-cn/vsftpd.po
 sed -i 's/"带宽监控"/"监视"/g' feeds/luci/applications/luci-app-nlbwmon/po/zh-cn/nlbwmon.po
-sed -i 's/"ShadowSocksR Plus+"/"SSR Plus+"/g' package/lean/luci-app-ssr-plus/po/zh-cn/shadowsocksr.po
+# sed -i 's/"ShadowSocksR Plus+"/"SSR Plus+"/g' package/lean/luci-app-ssr-plus/po/zh-cn/shadowsocksr.po
 # sed -i 's/"EQoS"/"限速设置"/g' package/lean/luci-app-eqos/po/zh-cn/eqos.lua
 # sed -i 's/"MWAN3 分流助手"/"分流助手"/g' package/lean/luci-app-mwan3helper/po/zh-cn/mwan3helper.po
 
