@@ -36,5 +36,5 @@ git clone --depth=1 https://github.com/tty228/luci-app-serverchan
 
 # 删除默认插件
 rm -rf ./feeds/luci/applications/luci-app-upnp
-rm -rf ./feeds/luci/applications/luci-app-wol
-rm -rf ./package/lean/wol
+# rm -rf ./feeds/luci/applications/luci-app-wol
+# rm -rf ./package/lean/wol
